@@ -10,6 +10,8 @@ app.use(express.json());
 // Routes
 const authRouter = require('./routes/authRouter');
 app.use('/api/auth', authRouter);
+const jobRouter = require('./routes/jobRouter');
+app.use('/api/jobs', jobRouter);
 
 app.get('/', (req, res) => res.json({ message: 'Job Board API Running' }));
 
