@@ -12,6 +12,8 @@ const authRouter = require('./routes/authRouter');
 app.use('/api/auth', authRouter);
 const jobRouter = require('./routes/jobRouter');
 app.use('/api/jobs', jobRouter);
+const applicationRouter = require('./routes/applicationRouter');
+app.use('/api/applications', applicationRouter);
 
 app.get('/', (req, res) => res.json({ message: 'Job Board API Running' }));
 
