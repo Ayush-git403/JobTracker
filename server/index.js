@@ -5,16 +5,19 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(express.json());
+
+// Routes
+const authRouter = require('./routes/authRouter');
+app.use('/api/auth', authRouter);
+
+app.get('/', (req, res) => res.json({ message: 'Job Board API Running' }));
+
 const { sequelize } = require('./models');
 
-// Sync database
 sequelize.sync({ alter: true })
   .then(() => console.log('Database synced'))
   .catch(err => console.error('DB sync error:', err));
-
-app.use(express.json());
-
-app.get('/', (req, res) => res.json({ message: 'Job Board API Running' }));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
