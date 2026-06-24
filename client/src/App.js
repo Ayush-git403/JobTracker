@@ -3,6 +3,9 @@ import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import EmployerDashboard from './pages/EmployerDashboard';
+import ApplicantDashboard from './pages/ApplicantDashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -14,6 +17,16 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/unauthorized" element={<h1 style={{ padding: '20px' }}>Unauthorized Access</h1>} />
+          <Route path="/employer" element={
+            <ProtectedRoute allowedRoles={['employer']}>
+              <EmployerDashboard />
+            </ProtectedRoute>
+          } />
+          <Route path="/applicant" element={
+            <ProtectedRoute allowedRoles={['applicant']}>
+              <ApplicantDashboard />
+            </ProtectedRoute>
+          } />
         </Routes>
       </Router>
     </AuthProvider>
