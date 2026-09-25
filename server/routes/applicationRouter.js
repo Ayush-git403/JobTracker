@@ -6,12 +6,16 @@ const {
   applyToJob,
   getMyApplications,
   getJobApplications,
-  updateApplicationStatus
+  updateApplicationStatus,
+  getResumeUploadUrl,
+  confirmResumeUpload
 } = require('../controllers/applicationController');
 
 // Applicant only
 router.post('/', authMiddleware, roleMiddleware('applicant'), applyToJob);
 router.get('/my', authMiddleware, roleMiddleware('applicant'), getMyApplications);
+router.post('/:id/resume-upload-url', authMiddleware, roleMiddleware('applicant'), getResumeUploadUrl);
+router.post('/:id/resume-confirm', authMiddleware, roleMiddleware('applicant'), confirmResumeUpload);
 
 // Employer only
 router.get('/job/:job_id', authMiddleware, roleMiddleware('employer'), getJobApplications);

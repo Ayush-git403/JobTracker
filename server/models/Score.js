@@ -15,7 +15,7 @@ const Score = sequelize.define('Score', {
     allowNull: false,
     defaultValue: 'pending'
   },
-  error_message: { type: DataTypes.STRING, allowNull: true }
+  error_message: { type: DataTypes.TEXT, allowNull: true }
 }, { timestamps: true });
 
 module.exports = Score;
