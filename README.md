@@ -1,4 +1,4 @@
-# JobTracker — Job Board & Applicant Tracking System
+# SkillMatch — Job Board & Applicant Tracking System
 
 ### A full-stack role-based hiring platform connecting Employers and Applicants
 
@@ -10,9 +10,9 @@
 
 ---
 
-## 📌 What is JobTracker?
+## 📌 What is SkillMatch?
 
-JobTracker is a full-stack web application that streamlines the hiring process through a role-based platform. Employers can post jobs and manage applications, while Applicants can browse listings and track their application status in real time — all secured with JWT authentication and role-based access control.
+SkillMatch is a full-stack web application that streamlines the hiring process through a role-based platform. Employers can post jobs and manage applications, while Applicants can browse listings and track their application status in real time — all secured with JWT authentication and role-based access control.
 
 ---
 
@@ -52,7 +52,7 @@ JobTracker is a full-stack web application that streamlines the hiring process t
 ## 🏗 System Architecture
 
 ```
-JobTracker/
+SkillMatch/
 ├── client/                         # React Frontend
 │   └── src/
 │       ├── api/
@@ -217,7 +217,7 @@ Backend split into 4 modular Express routers, dedicated controllers, and Sequeli
 ## 👨‍💻 Author
 
 **Ayushman Srivastava**
-B.Tech Computer Science — United College of Engineering and Research, Prayagraj
+B.Tech Computer Science 
 
 [![GitHub](https://img.shields.io/badge/GitHub-Ayush--git403-black?logo=github)](https://github.com/Ayush-git403)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](#)
